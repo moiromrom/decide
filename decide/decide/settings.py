@@ -166,7 +166,7 @@ ALLOWED_VERSIONS = ['v1', 'v2']
 DEFAULT_VERSION = 'v1'
 
 BASEURL="https://myappdecidefork.herokuapp.com"
-
+APIS={}
 try:
     from local_settings import *
 except ImportError:
