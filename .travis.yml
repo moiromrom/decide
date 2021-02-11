@@ -16,9 +16,8 @@ install:
   - pip install codacy-coverage
 script:
   - cd decide
-  - coverage run --branch --source=. ./manage.py test --keepdb 
-  - coverage xml
-  - python-codacy-coverage -r coverage.xml
+  - cp local_settings_travis.py local_settings.py
+  - coverage run --branch --source=. ./manage.py test --keepdb --with-xunit
 deploy:
   provider: heroku
   app: myappdecidefork
